@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td{
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div style="margin: auto">
+    <table border="1" style="text-align: center">
+        <script>
+            for (let i = 0; i < 3; i++) {
+                document.write('<tr>')
+                for (let j = 0; j < 3; j++) {
+                    document.write(`<td onclick="change(${3*i+j+1})" id="${3*i+j+1}"></td>`)
+                }
+                document.write('</tr>')
+            }
+        </script>
+    </table>
+</div>
+<script>
+    let cnt =1;
+    function checkWin() {
+        let arr =[]
+        let listtd = document.querySelectorAll('td');
+        for (let i = 0; i <listtd.length ; i++) {
+            arr.push(listtd[i].innerText)
+        }
+        let con1=arr[0] && arr[0]== arr[1]&&arr[1]==arr[2]
+        let con2=arr[0] && arr[0]== arr[4]&&arr[4]==arr[8]
+        let con3=arr[0] && arr[0]== arr[3]&&arr[3]==arr[6]
+        let con4=arr[1] && arr[1]== arr[4]&&arr[4]==arr[7]
+        let con5=arr[2] && arr[2]== arr[5]&&arr[5]==arr[8]
+        let con6=arr[2] && arr[2]== arr[4]&&arr[4]==arr[6]
+        let con7=arr[3] && arr[3]== arr[4]&&arr[4]==arr[5]
+        let con8=arr[6] && arr[6]== arr[7]&&arr[7]==arr[8]
+        if (con1||con2||con3){
+            alert(arr[0]+' win')
+        } else if(con4||con6||con7){
+            alert(arr[4]+ ' win')
+        } else if(con5||con8){
+            alert(arr[8]+" win")
+        }
+        if(cnt>9){
+            alert("hoa")
+        }
+    }
+
+function change(index){
+   if (cnt<=9){
+       if(cnt%2==0){
+           document.getElementById(index).innerText = 'O';
+       } else {
+           document.getElementById(index).innerText = 'X'
+       }
+
+   }
+    cnt++;
+   checkWin()
+}
+</script>
+
+</body>
+</html>

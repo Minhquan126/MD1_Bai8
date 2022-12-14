@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="add" type="text">
+<button onclick="addElement()">add</button>
+<label id="hienthi">Hien thi mang</label><br>
+<button onclick="soLonNhat()">max</button>
+<label id="max" >So lon nhat la</label>
+<button onclick="tinhTong()">tong</button>
+<label id="tong"> Tong la</label><br>
+<button onclick="sapXep()">sap xep</button>
+<label id="sapxep">mang da sap xep</label>
+<h3 id="x">cat chuoi</h3>
+<script>
+    let array = []
+    function addElement() {
+        let add = document.getElementById('add').value
+      array.push(add)
+        document.getElementById('hienthi').innerHTML = array
+    }
+    function soLonNhat(){
+        let max = array[0]
+        let count = 0
+        for (let i = 0; i < array.length; i++) {
+            if (max < array[i]){
+                max = array[i]
+                count = i
+            }
+        } document.getElementById('max').innerText = max + 'index' + count
+    }
+    function tinhTong(){
+        let tong = 0
+        for (let i = 0; i < array.length; i++) {
+            tong += +array[i]
+        }document.getElementById('tong').innerText = tong
+    }
+    function sapXep(){
+array.sort(function (a,b) {return b-a})
+        document.getElementById('sapxep').innerHTML = array
+    }
+
+
+</script>
+</body>
+</html>

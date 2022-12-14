@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td{
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+<h2>Game caro</h2>
+<table id="game" border="1">
+    <script>
+        for (let i = 0; i <7; i++) {
+        document.write("<tr>")
+        for (let j = 0; j <7 ; j++) {
+            document.write(`<td ${i+j} ${i+j}></td>`)
+        }
+        document.write("</tr>")
+    }</script>
+</table>
+<script>
+
+
+        // let broad = []
+        // let data = ''
+        // for (let i = 0; i < 3; i++) {
+        //     // broad[i] = new Array(0, 0, 0)
+        //     data += '<br>'
+        //     for (let j = 0; j < 3; j++) {
+        //
+        //         data += broad[i][j]
+        //     }
+        //     console.log(data)
+        //     document.write(data)
+        // }
+
+//                data += `<tr>
+// <td>${broad[i][j]}<td>
+// <td>${broad[i][j]}<td>
+// <td>${broad[i][j]}<td>
+// </tr>
+// `
+//             }
+//         } document.getElementById('game').innerHTML = data
+//     }
+
+</script>
+</body>
+</html>
